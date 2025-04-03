@@ -1,0 +1,15 @@
+---
+- name: use this multiple server inatsll
+  hosts: all
+  tasks:
+    - name: this machiine is ubuntu
+      apt:
+        name: apache2
+        state: latest
+      when: ansible_distribution == "Ubuntu"
+
+    - name: this machine is redhate
+      yum:
+        name: httpd
+        state: present
+      when: ansible_distribution  == "RedHat"
