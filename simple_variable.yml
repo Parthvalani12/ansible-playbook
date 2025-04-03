@@ -1,0 +1,11 @@
+---
+- name: variable
+  hosts: all
+  vars:
+    user: game
+  vars_files:
+    - var.yml
+
+  tasks:
+    - user:
+       name: "{{ user }}"
