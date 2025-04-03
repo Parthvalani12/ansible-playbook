@@ -1,0 +1,4 @@
+THIS SERVER IP IS : {{ ansible_default_ipv4.address }}
+THE HOSTNAME IS : {{ ansible_hostname }}
+THE TOTAL MEMRORY OF THE DEVICE : {{ ansible_memtotal_mb }}
+THE OS OF THIS DEVICE OF : {{ ansible_distribution }}
