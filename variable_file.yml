@@ -1,0 +1,24 @@
+---
+- name: add multiple task
+  hosts: all
+  vars:
+    file_name: harsha.txt
+  tasks:
+    - name: add file
+      file:
+        name: "{{ file_name }}"
+        state: touch
+
+
+- name: add new task
+  hosts: webserver
+  vars:
+    user_add: nacho
+  vars_files:
+    - var.yml
+  tasks:
+    - name: useradd
+      user:
+        name: "{{ user_add }}"
+        state: absent
+        remove: yes
