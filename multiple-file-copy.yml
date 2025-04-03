@@ -1,0 +1,16 @@
+---
+- name: copy multiple file
+  hosts: all
+  tasks:
+    - name: file
+      copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+      loop:
+        - src: file1.txt
+          dest: /home
+        - src: file2.txt
+          dest: /etc
+
+        - src: file3.txt
+          dest: /tmp
