@@ -1,0 +1,9 @@
+---
+
+- name: to genret hardware report
+  hosts: all
+  tasks:
+  - name: add copy file
+    template:
+      src: report.txt
+      dest: /report.txt
