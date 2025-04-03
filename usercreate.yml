@@ -1,0 +1,11 @@
+---
+
+- name: usermanage
+  hosts: localhost
+
+  tasks:
+  - name: User create
+    user:
+      name: parth
+      comment: new user add by ansible
+      shell: /bin/bash
