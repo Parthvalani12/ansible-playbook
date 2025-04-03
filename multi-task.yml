@@ -1,0 +1,18 @@
+---
+- name: filetxt
+  hosts: all
+  tasks:
+    - name: add service
+      apt:
+        name: nginx
+        state: present
+
+    - copy:
+        src: file.txt
+        dest: /
+- hosts: webserver
+  tasks:
+    - name: add file
+      copy:
+        src: /mnt/hello.txt
+        dest: /
